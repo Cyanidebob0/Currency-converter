@@ -55,7 +55,7 @@ form {
     border-radius: 20px;
 }
 
-#inner-from, #inner-to {
+#inner {
     height: 50px;
     margin-left: 30px;
     display: flex;
