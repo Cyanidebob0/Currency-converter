@@ -11,12 +11,11 @@
 
     <div id="header">
         <h1>Currency Converter</h1>
-        <p>Check live rates,set live rates and more</p>
-     </div>
+        <p>Check live rates, set live rates and more</p>
+    </div>
 
-     <div id="main-container">
+    <div id="main-container">
         <form action="">
-
             <div id="from">
                 <p id="from-amt">Amount</p>
                 <div id="inner-from">
@@ -24,7 +23,7 @@
                     <select id="dropdown-from" name="dropdown-from">
                         <option value="USD">USD</option>
                     </select>
-                    <input type="text" id="from-input">
+                    <input type="number" id="input-from">
                 </div>
             </div>
             
@@ -35,11 +34,14 @@
                     <select id="dropdown-to" name="dropdown-to">
                         <option value="INR">INR</option>
                     </select>
-                    <input type="text" id="to-input" readonly>
+                    <input type="text" id="input-to" readonly>
                 </div>
             </div>
+            
+            <p id="exchange-rate">Exchange Rate</p>
+            <button type="submit" id="convert-button">Convert</button>
         </form>
-     </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
