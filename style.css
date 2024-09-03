@@ -49,18 +49,6 @@ form {
     font-size: 2rem;
 }
 
-#inner-from {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#inner-to {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
 #flag-from, #flag-to {
     height: 65px;
     width: 65px;
@@ -70,6 +58,9 @@ form {
 #inner-from, #inner-to {
     height: 50px;
     margin-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
 }
 
 #dropdown-from, #dropdown-to {
