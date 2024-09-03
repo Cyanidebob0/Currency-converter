@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -17,26 +18,26 @@
         <form action="">
 
             <div id="from">
-                <p>Amount</p>
+                <p id="from-amt">Amount</p>
                 <div id="inner-from">
-                    <img src="" id="from-flag">
+                    <img src="https://flagsapi.com/US/flat/64.png" id="flag-from">
                     <select id="dropdown-from" name="dropdown-from">
                         <option value="USD">USD</option>
                     </select>
+                    <input type="text" id="from-input">
                 </div>
             </div>
             
             <div id="to">
-                <p>Converted Amount</p>
+                <p id="to-amt">Converted Amount</p>
                 <div id="inner-to">
-                    <img src="" id="to-flag">
+                    <img src="https://flagsapi.com/IN/flat/64.png" id="flag-to">
                     <select id="dropdown-to" name="dropdown-to">
                         <option value="INR">INR</option>
                     </select>
+                    <input type="text" id="to-input" readonly>
                 </div>
             </div>
-
-            <div id="to"></div>
         </form>
      </div>
     <script src="app.js"></script>
