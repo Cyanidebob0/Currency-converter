@@ -1,90 +1,137 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
-
 }
-body{
+
+body {
     background: linear-gradient(to bottom, rgba(2, 64, 89, 0.2), rgba(197, 213, 217, 0.2));
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
 }
 
 #header {
     margin-top: 1rem;
-    color:#012340;
+    color: #012340;
     text-align: center;
     font-size: 2rem;
-
 }
-p{
+
+p {
     margin-top: 10px;
     font-size: 20px;
     color: #024059;
 }
 
-#main-container{
+#main-container {
     border-radius: 15px;
-    margin-top:60px;
+    margin-top: 60px;
     height: 500px;
     width: 450px;
     background-color: #fefefe;
-
-    
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
-    
-    
 }
 
-#from{
-    border:2px black solid;
-    height: 175px;
+#from, #to {
+    height: 140px;
     padding: 20px;
 }
 
-#to{
-    border:2px black solid;
-    height: 175px;
-    padding: 20px;
+#to-amt {
+    font-size: 2rem;
 }
 
-#to-amt{
-    font-size:2rem;
+#from-amt {
+    font-size: 2rem;
 }
 
-#from-amt{
-    font-size:2rem;
-
-}
-#inner-from{
+#inner-from {
     display: flex;
     align-items: center;
     margin-top: 20px;
 }
-#inner-to{
+
+#inner-to {
     display: flex;
     align-items: center;
     margin-top: 20px;
 }
+
 #flag-from, #flag-to {
     height: 65px;
     width: 65px;
     border-radius: 20px;
-    
 }
 
-#inner-from{
-    height: 29px;
+#inner-from, #inner-to {
+    height: 50px;
+    margin-left: 30px;
 }
 
+#dropdown-from, #dropdown-to {
+    height: 35px;
+    width: 65px;
+    color: #012340;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
+#input-from, #input-to {
+    height: 40px;
+    width: 200px;
+    color: #012340;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(218, 216, 216);
+    outline: none;
+    margin-left: 20px;
+}
 
+#input-to {
+    cursor: default;
+}
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+#input-from:hover {
+    background-color: rgba(218, 216, 216, 0.7);
+}
 
+#convert-button {
+    margin-top: 25px;
+    height: 40px;
+    width: 400px;
+    color: #ffffff;
+    background-color: #024059;
+    margin-left: 25px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#convert-button:hover {
+    background-color: #012340;
+}
+
+#exchange-rate {
+    font-size: 1.5rem;
+    color: #024059;
+    margin-top: 20px;
+    text-align: center;
+}
