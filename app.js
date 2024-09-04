@@ -1,6 +1,9 @@
-BASE_URL ="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json"
+BASE_URL ="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies"
 
 let selects = document.querySelectorAll("#inner select");
+let btn = document.querySelector("button");
+let fromCurr = document.querySelector("#dropdown-from");
+let toCurr  = document.querySelector("#dropdown-to");
 
 for( let select of selects){
     for( let currCode in countryList){
@@ -37,6 +40,21 @@ let updateFlag = (element) => {
         flagTo.src = `https://flagsapi.com/${countryCode}/flat/64.png`;
     }
 }
+
+
+btn.addEventListener("click", async (evt)=>{
+    evt.preventDefault();
+    let input = document.querySelector("#input-from");
+    if(input.value === 0 || input.value < 1){
+        input.value=1;
+    }
+    let url = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
+    let response = await fetch(url);
+    console.log(response);
+    let data = await response.json(); 
+    console.log(data);
+    ;
+})
 
 
 
