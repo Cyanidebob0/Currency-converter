@@ -42,19 +42,38 @@ let updateFlag = (element) => {
 }
 
 
-btn.addEventListener("click", async (evt)=>{
+btn.addEventListener("click", async (evt) => {
     evt.preventDefault();
-    let input = document.querySelector("#input-from");
-    if(input.value === 0 || input.value < 1){
-        input.value=1;
-    }
-    let url = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
-    let response = await fetch(url);
-    console.log(response);
-    let data = await response.json(); 
-    console.log(data);
-    ;
-})
+    let inputFrom = document.querySelector("#input-from");
+    let inputTo = document.querySelector("#input-to");
+    let exchangeRateElem = document.querySelector("#exchange-rate");
 
+    let amount = parseFloat(inputFrom.value);
+    if (isNaN(amount) || amount <= 0) {
+        amount = 1;
+        inputFrom.value=1;
+    }
+
+    let fromCurrency = fromCurr.value.toLowerCase();
+    let toCurrency = toCurr.value.toLowerCase();
+
+    let url = `${BASE_URL}/${fromCurrency}.json`;
+    try {
+        let response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch exchange rates.");
+        let data = await response.json();
+
+        let rate = data[fromCurrency][toCurrency];
+        if (!rate) throw new Error("Currency not found.");
+
+        let convertedAmount = (amount * rate).toFixed(2);
+        inputTo.value = convertedAmount;
+        exchangeRateElem.textContent = `Exchange Rate: 1 ${fromCurrency.toUpperCase()} = ${rate} ${toCurrency.toUpperCase()}`;
+    } catch (error) {
+        console.error("Error:", error);
+        inputTo.value = "Error";
+        exchangeRateElem.textContent = "Exchange Rate: N/A";
+    }
+});
 
 
